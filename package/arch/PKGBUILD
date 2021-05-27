@@ -1,0 +1,17 @@
+# Maintainer: Daryl Ronningen <relms@relms.dev>
+
+pkgname=prideflags-wallpapers
+pkgver=1.0.0
+pkgrel=2
+pkgdesc='Pride Flags Wallpapers'
+arch=(any)
+url='https://code.relms.dev/Relms/pride-flags-wallpapers'
+makedepends=('tar')
+optdepends=('feh: set desktop wallpapers')
+license=('custom:none')
+source=('flags.tar.xz')
+sha256sums=('cfa51b1d1bed0cf8a81fdbeff5700570a334362b7ec425948de62d8d31e700a9')
+
+package() {
+  install -Dm644 -t "$pkgdir/usr/share/backgrounds/prideflags/" flags/*
+}
